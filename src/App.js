@@ -18,7 +18,7 @@ class App extends React.Component {
     
     const url ="http://localhost:8000/books"
     const herokuUrl="https://cors-anywhere.herokuapp.com/"
-    fetch( url+herokuUrl)
+    fetch( herokuUrl + url)
     .then(response=> response.json())
     .then(book=>this.setState({books:book.books}))
   }
