@@ -1,26 +1,59 @@
 import React from 'react';
-import logo from './logo.svg';
+import Header from './components/header/header.component'
 import './App.css';
+import { Switch, Route}  from 'react-router-dom';
+import {CardList} from './components/card-list/card-list.component'
+import FilteredBooks from './components/filtered-books/filtered-books.components'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import {SearchBox} from './components/search-box/search-box.component'
+class App extends React.Component {
+  constructor(){
+    super();
+    this.state={
+      books:[],
+      searchField:""
+    }
+  }
+  componentDidMount(){
+    
+    const url ="http://localhost:8000/books"
+    fetch( url)
+    .then(response=> response.json())
+    .then(book=>this.setState({books:book.books}))
+  }
+  handleChange= (e)=>{
+    this.setState({searchField: e.target.value})
+    
+ }
+  render(){
+    const { books, searchField } = this.state;
+    const filteredBooks = books.filter(books =>
+      books.title.toLowerCase().includes(searchField.toLowerCase())
+      )
+    return (
+      <div className="App">
+         
+          <Header/>
+          <h1>My-Book-Store</h1>
+          <SearchBox
+          placeholder='Search Monster'
+          handleChange= {this.handleChange}
+        />
+          <Switch>
+          <Route exact path='/' component={() => <CardList books={filteredBooks} />}/>
+          <Route exact path='/node' component={() => <FilteredBooks books={this.state.books} search="node"/>}/>
+          <Route exact path='/net' component={() => <FilteredBooks books={this.state.books} search="net"/>}/>
+          <Route exact path='/java' component={() => <FilteredBooks books={this.state.books} search="java"/>}/>
+          <Route exact path='/php' component={() => <FilteredBooks books={this.state.books} search="php"/>}/>
+          <Route exact path='/mongodb' component={() => <FilteredBooks books={this.state.books} search="mongodb"/>}/>
+          <Route exact path='/action' component={() => <FilteredBooks books={this.state.books} search="action"/>}/>
+          </Switch>
+          
+           
+      </div>
+    );
+  }
+ 
 }
 
 export default App;
