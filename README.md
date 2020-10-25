@@ -14,6 +14,10 @@
 
 GitHub link:-https://github.com/kunal8411/vastDreams-NodeJs-.git
 
+To run the node js code: $node server.js
+
+and to see the JSON data in browser : http://localhost:8000/books
+
 7)In react, first I fetched all the information from API and store the information in state.
 
 8)So, using react, on home page of application, user can see all the books which are present in inventory.
@@ -21,7 +25,11 @@ GitHub link:-https://github.com/kunal8411/vastDreams-NodeJs-.git
 9)If user wants to search any book, he/she can seach the book on home page.
 
 10)On header section user can see different categories ob books so, if user is interested in only looking for that category, he/she can click on category and can see all the books related to that category.
+ 
+11)To run the code in react:
+$yarn start
 
+and Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
 
