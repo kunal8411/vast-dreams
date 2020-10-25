@@ -1,13 +1,14 @@
 ## Approach for this project.
+
 1)I have created this project using MERN stack. 
 
-2)First I created a MongoDb database and store all the book's information in collections.(Books ehich are present in our inventory).
+2)First I created a MongoDb database and store all the book's information in collections.(Books which are present in our inventory).
 
-3) To get all the data from that MongoDb server I created one project in noe.js and using express framework, retrive all details from server.
+3) To get all the data from that MongoDb server I created one project in node.js and using express framework, retrive all details from server.
 
 4)To get all the books information, created REST API and pass that API to my React framework. 
 
-5)So, to run the project you must run the node.js server so we can pass all the data to our frontend framework.
+5)STo run the project you must run the node.js server so we can pass all the data to our frontend framework.
 
 6)To run node.js code, clone the project which I have pushed into github. Below is the URL for node.js project.
 
@@ -16,7 +17,6 @@ GitHub link:-https://github.com/kunal8411/vastDreams-NodeJs-.git
 7)In react, first I fetched all the information from API and store the information in state.
 
 8)So, using react, on home page of application, user can see all the books which are present in inventory.
-
 
 9)If user wants to search any book, he/she can seach the book on home page.
 
