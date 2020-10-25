@@ -17,7 +17,8 @@ class App extends React.Component {
   componentDidMount(){
     
     const url ="http://localhost:8000/books"
-    fetch( url)
+    const herokuUrl="https://cors-anywhere.herokuapp.com/"
+    fetch( url+herokuUrl)
     .then(response=> response.json())
     .then(book=>this.setState({books:book.books}))
   }
@@ -46,7 +47,7 @@ class App extends React.Component {
           <Route exact path='/java' component={() => <FilteredBooks books={this.state.books} search="java"/>}/>
           <Route exact path='/php' component={() => <FilteredBooks books={this.state.books} search="php"/>}/>
           <Route exact path='/mongodb' component={() => <FilteredBooks books={this.state.books} search="mongodb"/>}/>
-          <Route exact path='/action' component={() => <FilteredBooks books={this.state.books} search="action"/>}/>
+          <Route exact path='/python' component={() => <FilteredBooks books={this.state.books} search="python"/>}/>
           </Switch>
           
            

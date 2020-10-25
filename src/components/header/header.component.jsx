@@ -19,7 +19,7 @@ const Header= ({hidden})=>(
         <Link className='option' to='/php'>PHP</Link>
         <Link className='option' to='/mongodb'>MONGODB</Link>
        
-        <Link className='option' to='/action'>Action</Link>
+        <Link className='option' to='/python'>PYTHON</Link>
         
         <Link className='option' to='/signin'>SIGN IN</Link>   
         
