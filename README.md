@@ -3,7 +3,7 @@
 
 2)First I created a MongoDb database and store all the book's information in collections.(Books ehich are present in our inventory).
 
-3) TO get all the data from that MongoDb server I created one project in noe.js and using express framework, retrive all details from server.
+3) To get all the data from that MongoDb server I created one project in noe.js and using express framework, retrive all details from server.
 
 4)To get all the books information, created REST API and pass that API to my React framework. 
 
