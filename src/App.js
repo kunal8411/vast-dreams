@@ -17,8 +17,8 @@ class App extends React.Component {
   componentDidMount(){
     
     const url ="http://localhost:8000/books"
-    const herokuUrl="https://cors-anywhere.herokuapp.com/"
-    fetch( herokuUrl + url)
+    
+    fetch(url)
     .then(response=> response.json())
     .then(book=>this.setState({books:book.books}))
   }
@@ -37,7 +37,7 @@ class App extends React.Component {
           <Header/>
           <h1>My-Book-Store</h1>
           <SearchBox
-          placeholder='Search Monster'
+          placeholder='Search Books'
           handleChange= {this.handleChange}
         />
           <Switch>
